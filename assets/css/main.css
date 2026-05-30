@@ -398,9 +398,9 @@ body {
 
 .btn-primary {
   font-family: var(--mono);
-  font-size: 15px;
+  font-size: 22px;
   font-weight: 500;
-  padding: 16px 36px;
+  padding: 64px 60px;
   border-radius: var(--radius);
   border: none;
   background: var(--accent);
