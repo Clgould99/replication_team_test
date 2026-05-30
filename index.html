@@ -1,0 +1,157 @@
+---
+layout: default
+---
+
+{% assign settings = site.data.settings %}
+{% assign projects = site.data.projects %}
+{% assign active    = projects | where: "status", "active" %}
+{% assign completed = projects | where: "status", "completed" %}
+{% assign planned   = projects | where: "status", "planned" %}
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="site-name">{{ settings.team_name | downcase | replace: " ", "-" }}</a>
+    <nav class="header-links">
+      <a href="#projects">Projects</a>
+      <a href="#suggest">Suggest a project</a>
+      {% if settings.github_url %}<a href="{{ settings.github_url }}" target="_blank">GitHub ↗</a>{% endif %}
+      {% if settings.osf_url %}<a href="{{ settings.osf_url }}" target="_blank">OSF ↗</a>{% endif %}
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="site-wrap">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-label">Open science · {{ settings.field }}</div>
+      <h1>{{ settings.team_name }}</h1>
+      <p>{{ settings.tagline }}</p>
+
+      <div class="stats-row">
+        <div class="stat-block">
+          <div class="stat-num">{{ projects.size }}</div>
+          <div class="stat-label">Studies total</div>
+        </div>
+        <div class="stat-block">
+          <div class="stat-num">{{ completed.size }}</div>
+          <div class="stat-label">Completed</div>
+        </div>
+        <div class="stat-block">
+          <div class="stat-num">{{ active.size }}</div>
+          <div class="stat-label">Active</div>
+        </div>
+        <div class="stat-block">
+          <div class="stat-num">{{ planned.size }}</div>
+          <div class="stat-label">Planned</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FILTER NAV -->
+    <nav class="filter-nav" aria-label="Filter projects">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="active">Active</button>
+      <button class="filter-btn" data-filter="completed">Completed</button>
+      <button class="filter-btn" data-filter="planned">Planned</button>
+    </nav>
+
+    <!-- PROJECTS -->
+    <div id="projects">
+
+      {% if active.size > 0 %}
+      <section class="projects-section">
+        <div class="section-heading">Active projects</div>
+        <div class="project-list">
+          {% for p in active %}
+          {% include project_card.html project=p %}
+          {% endfor %}
+        </div>
+      </section>
+      {% endif %}
+
+      {% if completed.size > 0 %}
+      <section class="projects-section">
+        <div class="section-heading">Completed</div>
+        <div class="project-list">
+          {% for p in completed %}
+          {% include project_card.html project=p %}
+          {% endfor %}
+        </div>
+      </section>
+      {% endif %}
+
+      {% if planned.size > 0 %}
+      <section class="projects-section">
+        <div class="section-heading">Planned</div>
+        <div class="project-list">
+          {% for p in planned %}
+          {% include project_card.html project=p %}
+          {% endfor %}
+        </div>
+      </section>
+      {% endif %}
+
+    </div>
+
+    <!-- SUGGEST -->
+    <section class="suggest-section" id="suggest">
+      <div class="suggest-inner">
+        <h2>Suggest a project</h2>
+        <p>Know an open source hardware project we should replicate? Fill in the details below and we'll review it for our queue.</p>
+
+        <div id="suggest-form">
+
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="f-name">Your name</label>
+              <input type="text" id="f-name" name="name" placeholder="Jane Smith" required />
+            </div>
+            <div class="form-group">
+              <label for="f-affiliation">Affiliation</label>
+              <input type="text" id="f-affiliation" name="affiliation" placeholder="Lab name or university" />
+            </div>
+            <div class="form-group">
+              <label for="f-date">Date</label>
+              <input type="date" id="f-date" name="date" />
+            </div>
+            <div class="form-group">
+              <label for="f-title">Project title</label>
+              <input type="text" id="f-title" name="project_title" placeholder="e.g. OpenFlexure Microscope" required />
+            </div>
+            <div class="form-group full">
+              <label for="f-description">Project description</label>
+              <textarea id="f-description" name="description" placeholder="Briefly describe the hardware project, what it does, and why it's worth replicating…" required></textarea>
+            </div>
+            <div class="form-group">
+              <label for="f-github">GitHub link (if available)</label>
+              <input type="url" id="f-github" name="github_url" placeholder="https://github.com/…" />
+            </div>
+            <div class="form-group">
+              <label for="f-links">Additional links (optional)</label>
+              <input type="text" id="f-links" name="additional_links" placeholder="Paper, docs, OSF, etc." />
+            </div>
+          </div>
+
+          <div class="suggest-actions">
+            <a href="https://machineagencyreplicators--hardware-project-suggestion.retool.app/" target="_blank" class="btn-primary">Submit suggestion ↗</a>
+            <span style="font-size: 12px; color: var(--text-3);">Opens submission form in a new tab</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <span>{{ settings.team_name }} · All materials available under open licenses</span>
+    <span>
+      {% if settings.github_url %}<a href="{{ settings.github_url }}" target="_blank">GitHub</a> · {% endif %}
+      Built with Jekyll + GitHub Pages
+    </span>
+  </div>
+</footer>
