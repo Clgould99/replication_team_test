@@ -7,16 +7,51 @@
 
 # Add your projects below. Copy and paste this template for each one:
 
-- id: author-year                  # unique slug, e.g. card-krueger-1994
-  title: "Name of project"
-  citation: "Author(s) (Year)"
-  status: planned                  # active | completed | planned
-  result: null                     # replicated | partial | null
-  topic: ["Topic"]                 # list of topic tags
-  started: null                    # "YYYY-MM" or null
-  completed: null                  # "YYYY-MM" or null
+# - id: author-year                  # unique slug, e.g. card-krueger-1994
+#   title: "Name of project"
+#   citation: "Author(s) (Year)"
+#   status: planned                  # active | completed | planned
+#   result: null                     # replicated | partial | null
+#   topic: ["Topic"]                 # list of topic tags
+#   started: null                    # "YYYY-MM" or null
+#   completed: null                  # "YYYY-MM" or null
+#   summary: "One or two sentences describing the project or outcome."
+#   repo: null                       # GitHub repo URL or null
+#   report: null                     # Link to report PDF or null
+
+# - id: author-year                  # unique slug, e.g. card-krueger-1994
+#   title: "Name of project"
+#   citation: "Author(s) (Year)"
+#   status: planned                  # active | completed | planned
+#   result: null                     # replicated | partial | null
+#   topic: ["Topic"]                 # list of topic tags
+#   started: null                    # "YYYY-MM" or null
+#   completed: null                  # "YYYY-MM" or null
+#   summary: "One or two sentences describing the project or outcome."
+#   repo: null                       # GitHub repo URL or null
+#   report: null                     # Link to report PDF or null
+
+- id: test                  # unique slug, e.g. card-krueger-1994
+  title: "test"
+  citation: "test"
+  status: completed                  # active | completed | planned
+  result: replicated                     # replicated | partial | null
+  topic: ["test"]                 # list of topic tags
+  started: "1999-01"                    # "YYYY-MM" or null
+  completed: "1999-01"                  # "YYYY-MM" or null
   summary: "One or two sentences describing the project or outcome."
   repo: null                       # GitHub repo URL or null
   report: null                     # Link to report PDF or null
-  prereg: null                     # OSF pre-registration URL or null
-  votes: null                      # Number of community upvotes (planned only)
+
+- id: test2                 # unique slug, e.g. card-krueger-1994
+  title: "test2"
+  citation: "test2"
+  status: planned                  # active | completed | planned
+  result: null                     # replicated | partial | null
+  topic: ["test2"]                 # list of topic tags
+  started: null                    # "YYYY-MM" or null
+  completed: null                  # "YYYY-MM" or null
+  summary: "test2."
+  repo: null                       # GitHub repo URL or null
+  report: null                     # Link to report PDF or null
+
