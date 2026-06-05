@@ -4,14 +4,14 @@
 # ============================================================
 
 team_name: "Replication Team"
-tagline: "We independently replicate published findings in economics and social science. All materials, code, and results are publicly available."
+tagline: "We replicate open-source laboratory hardware and automation tools. We construct, document, and contribute back to every project we work on. All materials, code, and results are publicly available."
 field: "Human Centered Design & Engineering"
 
 # Link to your GitHub Issues suggestion template or a Tally/Google Form
-suggestion_form_url: "https://github.com/your-org/your-repo/issues/new?template=suggest_replication.md"
+suggestion_form_url: "https://clgould99.github.io/replication_team_test/"
 
 # Your GitHub org or profile
-github_url: "https://github.com/your-org"
+github_url: "https://github.com/Clgould99/replication_team_test"
 
 # Optional: OSF profile
 osf_url: ""
