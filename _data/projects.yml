@@ -19,17 +19,6 @@
 #   repo: null                       # GitHub repo URL or null
 #   report: null                     # Link to report PDF or null
 
-# - id: author-year                  # unique slug, e.g. card-krueger-1994
-#   title: "Name of project"
-#   citation: "Author(s) (Year)"
-#   status: planned                  # active | completed | planned
-#   result: null                     # replicated | partial | null
-#   topic: ["Topic"]                 # list of topic tags
-#   started: null                    # "YYYY-MM" or null
-#   completed: null                  # "YYYY-MM" or null
-#   summary: "One or two sentences describing the project or outcome."
-#   repo: null                       # GitHub repo URL or null
-#   report: null                     # Link to report PDF or null
 
 - id: test                  # unique slug, e.g. card-krueger-1994
   title: "test"

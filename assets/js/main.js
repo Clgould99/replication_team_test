@@ -4,6 +4,10 @@ document.addEventListener('DOMContentLoaded', function () {
   const cards = document.querySelectorAll('.project-card');
   const sections = document.querySelectorAll('.projects-section');
 
+// Hide all cards and sections on load
+  cards.forEach(c => c.classList.add('hidden'));
+  sections.forEach(s => s.style.display = 'none');
+
   filterBtns.forEach(btn => {
     btn.addEventListener('click', function () {
       filterBtns.forEach(b => b.classList.remove('active'));
@@ -23,7 +27,6 @@ document.addEventListener('DOMContentLoaded', function () {
           }
         });
 
-        // Hide section headings if all cards in that section are hidden
         sections.forEach(section => {
           const visible = section.querySelectorAll('.project-card:not(.hidden)');
           section.style.display = visible.length === 0 ? 'none' : '';
